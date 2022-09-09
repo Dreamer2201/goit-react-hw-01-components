@@ -5,6 +5,10 @@ import StatisticsList from 'components/StatisticsList';
 import Section from 'components/Section';
 import friends from './components/friends.json';
 import FriendList from 'components/FriendList';
+import transactions from './components/transactions.json';
+import TransactionHistory from 'components/TransactionHistory';
+
+console.log(TransactionHistory);
 
 export default function App() {
   return (
@@ -20,7 +24,8 @@ export default function App() {
       <Section>
         <StatisticsList items={data} />
       </Section>
-        <FriendList items={friends} />
+      <FriendList items={friends} />
+      <TransactionHistory items={transactions} />
     </div>
 
   );
