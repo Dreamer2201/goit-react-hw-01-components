@@ -3,20 +3,18 @@ import StatisticsItem from './StatisticsItem';
 
 export default function StatisticsList({items}) {
     return (
-        <ul class="stat-list">
+        <ul className="stat-list">
             {items.map(item => (
-                <li key={item.id}>
-                    <StatisticsItem
+                    <StatisticsItem key={item.id}
                         label={item.label}
                         percentage={item.percentage}
                     />
-                </li>
             ))}
         </ul>
     );
 }
 StatisticsList.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
     }))
 }

@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 export default function StatisticsItem(props) {
     const { label, percentage } = props;
-    return <li class="item">
-      <span class="label">{label}</span>
-      <span class="percentage">{percentage}</span>
+    return <li className="item">
+      <span className="label">{label}</span>
+      <span className="percentage">{percentage}</span>
     </li>
 }
 
