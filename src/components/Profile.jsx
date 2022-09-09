@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types';
+
 export default function Profile(props) {
   const { avatar, username, tag, location, stats } = props;
   return <div class="profile">
   <div class="description">
     <img
       src={avatar}
-      alt="User avatar"
+      alt={username}
       class="avatar"
     />
     <p class="name">{username}</p>
@@ -27,4 +29,11 @@ export default function Profile(props) {
     </li>
   </ul>
 </div>
+}
+Profile.propTypes = {
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    stats: PropTypes.shape,
 }
