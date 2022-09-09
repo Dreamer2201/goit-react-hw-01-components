@@ -1,5 +1,8 @@
 import user from './components/user.json';
 import Profile from './components/Profile';
+import data from './components/data.json';
+import StatisticsList from 'components/StatisticsList';
+import Section from 'components/Section';
 import friends from './components/friends.json';
 import FriendList from 'components/FriendList';
 
@@ -14,6 +17,9 @@ export default function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
+      <Section>
+        <StatisticsList items={data} />
+      </Section>
         <FriendList items={friends} />
     </div>
 
