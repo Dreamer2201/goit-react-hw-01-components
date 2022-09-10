@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { UserProfile, StatsUser, ImageUser, StatsItem } from './Profile.styled';
 
 export default function Profile(props) {
   const { avatar, username, tag, location, stats } = props;
-  return <div className='profile'>
+  return <UserProfile className='profile'>
   <div className="description">
-    <img
+    <ImageUser
       src={avatar}
       alt={username}
       className="avatar"
@@ -14,21 +15,21 @@ export default function Profile(props) {
     <p className="location">{location}</p>
   </div>
 
-  <ul className="stats">
-    <li>
+  <StatsUser className="stats">
+    <StatsItem>
       <span className="label">Followers</span>
       <span className="quantity">{stats.followers}</span>
-    </li>
-    <li>
+    </StatsItem>
+    <StatsItem>
       <span className="label">Views</span>
       <span className="quantity">{stats.views}</span>
-    </li>
-    <li>
+    </StatsItem>
+    <StatsItem>
       <span className="label">Likes</span>
       <span className="quantity">{stats.likes}</span>
-    </li>
-  </ul>
-</div>
+    </StatsItem>
+  </StatsUser>
+</UserProfile>
 }
 Profile.propTypes = {
     avatar: PropTypes.string.isRequired,
