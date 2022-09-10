@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { Statistics } from './Statistics.styled';
+import { StatisticsBoard, Title} from './Statistics.styled';
 
 export default function Section({ title, children }) {
-    return <Statistics>
-        {title && <h2 className="title">{title}</h2>}
+    return <StatisticsBoard>
+        {title && <Title className="title">{title}</Title>}
         {children}
-    </Statistics>
+    </StatisticsBoard>
 }
 Section.propTypes = {
     title: PropTypes.string,
