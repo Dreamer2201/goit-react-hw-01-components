@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { StatsItem } from './Statistics.styled';
+import { StatsItem, TypeDocument, PerTypeDoc } from './Statistics.styled';
 
 export default function StatisticsItem(props) {
     const { label, percentage } = props;
-    return <StatsItem className="item" >
-      <span className="label" type={label} >{label}</span>
-      <span className="percentage">{percentage}%</span>
+    return <StatsItem className="item" typedoc={label}>
+      <TypeDocument className="label">{label}</TypeDocument>
+      <PerTypeDoc className="percentage">{percentage}%</PerTypeDoc>
     </StatsItem>
 }
 

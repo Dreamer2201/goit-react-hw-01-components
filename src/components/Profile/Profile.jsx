@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { UserProfile, StatsUser, ImageUser, StatsItem } from './Profile.styled';
+import { UserProfile, StatsUser, ImageUser, StatsItem, UserName, StatsTitle, UserLocation, UserTag, StatsData } from './Profile.styled';
 
 export default function Profile(props) {
   const { avatar, username, tag, location, stats } = props;
@@ -10,23 +10,23 @@ export default function Profile(props) {
       alt={username}
       className="avatar"
     />
-    <p className="name">{username}</p>
-    <p className="tag">{tag}</p>
-    <p className="location">{location}</p>
+    <UserName className="name">{username}</UserName>
+    <UserTag className="tag">@{tag}</UserTag>
+    <UserLocation className="location">{location}</UserLocation>
   </div>
 
   <StatsUser className="stats">
     <StatsItem>
-      <span className="label">Followers</span>
-      <span className="quantity">{stats.followers}</span>
+      <StatsTitle className="label">Followers</StatsTitle>
+      <StatsData className="quantity">{renderFollowers(stats)}</StatsData>
     </StatsItem>
     <StatsItem>
-      <span className="label">Views</span>
-      <span className="quantity">{stats.views}</span>
+      <StatsTitle className="label">Views</StatsTitle>
+        <StatsData className="quantity">{renderVievs(stats)}</StatsData>
     </StatsItem>
     <StatsItem>
-      <span className="label">Likes</span>
-      <span className="quantity">{stats.likes}</span>
+      <StatsTitle className="label">Likes</StatsTitle>
+      <StatsData className="quantity">{renderLikes(stats)}</StatsData>
     </StatsItem>
   </StatsUser>
 </UserProfile>
@@ -41,4 +41,13 @@ Profile.propTypes = {
       views: PropTypes.number.isRequired,
       likes: PropTypes.number.isRequired,
   }),
+}
+function renderFollowers(stats) {
+  return new Intl.NumberFormat('de-DE').format(stats.followers);
+}
+function renderVievs(stats) {
+  return new Intl.NumberFormat('de-DE').format(stats.views);
+}
+function renderLikes(stats) {
+  return new Intl.NumberFormat('de-DE').format(stats.likes);
 }

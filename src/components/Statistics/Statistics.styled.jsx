@@ -22,17 +22,16 @@ export const StatsItem = styled.li`
     display: flex;
     flex-direction: column;
     flex-basis: calc(100% / 4);
-    border: 1px solid grey;
     background-color: ${ (props) => {
-    switch (props.label) {
+    switch (props.typedoc) {
         case '.docx':
-            return "pink";
+            return "#46c3f2";
         case '.pdf':
-            return '#708090';
+            return '#9966cc';
         case '.mp3':
-            return "orange";
+            return "#c66461";
         case '.psd':
-            return '#708090';
+            return '#6eb7cd';
         default: return getRandomHexColor;
         }
     }
@@ -42,10 +41,19 @@ export const StatsItem = styled.li`
 export const Title = styled.h2`
     margin: 0;
     padding: 10px 0px;
-    background-color: #708090;
+    background-color: #fff;
     text-transform: uppercase;
+    color: #767676;
 `;
-
+export const TypeDocument = styled.span`
+    color: #f6f6f6;
+    margin-bottom: 5px;
+    font-size: 18px;
+`;
+export const PerTypeDoc = styled.span`
+    color: #f6f6f6;
+    font-size: 18px;
+`;
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
