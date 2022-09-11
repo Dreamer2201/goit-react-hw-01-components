@@ -33,7 +33,7 @@ export const StatsItem = styled.li`
             return "orange";
         case '.psd':
             return '#708090';
-        default: return "blue";
+        default: return getRandomHexColor;
         }
     }
     
@@ -45,3 +45,9 @@ export const Title = styled.h2`
     background-color: #708090;
     text-transform: uppercase;
 `;
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}

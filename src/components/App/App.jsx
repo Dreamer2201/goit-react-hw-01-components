@@ -8,6 +8,7 @@ import FriendList from 'components/FriendsList/FriendList';
 import transactions from '../../data/transactions.json';
 import TransactionHistory from 'components/Transactions/TransactionHistory';
 import { Container } from './App.styled';
+import { FriendsBoard } from '../FriendsList/FriendsList.styled';
  
 console.log(TransactionHistory);
 
@@ -24,7 +25,9 @@ export default function App() {
       <Section title="Upload stats">
         <StatisticsList items={data} />
       </Section>
-      <FriendList items={friends} />
+      <FriendsBoard >
+        <FriendList items={friends} />
+      </FriendsBoard>
       <TransactionHistory items={transactions} />
     </Container>
 
