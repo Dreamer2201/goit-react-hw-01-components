@@ -22,16 +22,16 @@ export const StatsItem = styled.li`
     display: flex;
     flex-direction: column;
     flex-basis: calc(100% / 4);
-    background-color: ${ (props) => {
-    switch (props.typedoc) {
+    background-color: ${({ typedoc, theme }) => {
+    switch (typedoc) {
         case '.docx':
-            return "#46c3f2";
+            return theme.colors.blue;
         case '.pdf':
-            return '#9966cc';
+            return theme.colors.violet;
         case '.mp3':
-            return "#c66461";
+            return theme.colors.red;
         case '.psd':
-            return '#6eb7cd';
+            return theme.colors.green;
         default: return getRandomHexColor;
         }
     }
