@@ -18,15 +18,15 @@ export default function Profile(props) {
   <StatsUser className="stats">
     <StatsItem>
       <StatsTitle className="label">Followers</StatsTitle>
-      <StatsData className="quantity">{renderFollowers(stats)}</StatsData>
+      <StatsData className="quantity">{renderStatsQuantity(stats.followers)}</StatsData>
     </StatsItem>
     <StatsItem>
       <StatsTitle className="label">Views</StatsTitle>
-        <StatsData className="quantity">{renderVievs(stats)}</StatsData>
+        <StatsData className="quantity">{renderStatsQuantity(stats.views)}</StatsData>
     </StatsItem>
     <StatsItem>
       <StatsTitle className="label">Likes</StatsTitle>
-      <StatsData className="quantity">{renderLikes(stats)}</StatsData>
+      <StatsData className="quantity">{renderStatsQuantity(stats.likes)}</StatsData>
     </StatsItem>
   </StatsUser>
 </UserProfile>
@@ -42,12 +42,6 @@ Profile.propTypes = {
       likes: PropTypes.number.isRequired,
   }),
 }
-function renderFollowers(stats) {
-  return new Intl.NumberFormat('de-DE').format(stats.followers);
-}
-function renderVievs(stats) {
-  return new Intl.NumberFormat('de-DE').format(stats.views);
-}
-function renderLikes(stats) {
-  return new Intl.NumberFormat('de-DE').format(stats.likes);
+function renderStatsQuantity(quantity) {
+  return new Intl.NumberFormat('de-DE').format(quantity);
 }
